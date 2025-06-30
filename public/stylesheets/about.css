@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Barrio&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/images/logos/Copilot_20250625_180243.png');
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: #000000;
+    background-size: cover; /* Makes sure the image covers the entire background */
+    background-position: center; /* Keeps it centered */
+    background-repeat: no-repeat; /* Prevents it from repeating */
+     background-position: 40% 85%; /* 40% from the left, 90% from the top */
+    margin: 0;
+    height: 100vh;
+}
+
+.nav{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 55px;
+    background: rgba(-135deg, 2, 2, 2, 0.2);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #911fd3;
+    border-radius: 10px;
+}
+
+.logo{
+    margin-left: 100px ;
+}
+.logo img{
+    width: 100px;
+    height: auto;
+    filter: brightness(0) invert(100%);
+}
+.nav-ele >ul{
+    margin-right: 100px;
+    border-radius: 5px;
+    color: aliceblue;
+    /* margin-right: 100px; */
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    justify-content: center; 
+    list-style-type: none;
+
+}
+
+.nav-ele >ul>li{
+    margin-left: 20px;
+    padding:6px;
+    border-radius: 5px;
+    }
+    
+ a {
+        text-decoration: none;
+        color: inherit;
+}
+
+.main-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}

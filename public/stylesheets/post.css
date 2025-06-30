@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Barrio&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/images/logos/Copilot_20250625_180243.png');
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: #000000;
+    background-size: cover; /* Makes sure the image covers the entire background */
+    background-position: center; /* Keeps it centered */
+    background-repeat: no-repeat; /* Prevents it from repeating */
+     background-position: 40% 85%; /* 40% from the left, 90% from the top */
+    margin: 0;
+    height: 100vh;
+}
+
+.nav{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 55px;
+    background: rgba(-135deg, 2, 2, 2, 0.2);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #911fd3;
+    border-radius: 10px;
+}
+
+.logo{
+    margin-left: 100px ;
+}
+.logo img{
+    width: 100px;
+    height: auto;
+    filter: brightness(0) invert(100%);
+}
+.nav-ele >ul{
+    margin-right: 100px;
+    border-radius: 5px;
+    color: aliceblue;
+    /* margin-right: 100px; */
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    justify-content: center; 
+    list-style-type: none;
+
+}
+
+.nav-ele >ul>li{
+    margin-left: 20px;
+    padding:6px;
+    border-radius: 5px;
+    }
+    
+ a {
+        text-decoration: none;
+        color: inherit;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 55px);
+    gap: 20px;
+}
+
+.container h1{
+    font-size: 1.7rem;
+    font-family: 'lora', serif;
+    color: #cacaca;
+    text-align: center;
+    /* border-bottom: 2px solid #333a45; */
+}
+
+/* .cus-devider{
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(to right,transparent, #a200ff, transparent);
+} */
+
+.upl-box{
+    width: 100%;
+    max-width: 350px;
+    min-width: 250px;
+    height: 300px;
+    border: 2px solid #333a45;
+    backdrop-filter: blur(1px);
+    box-shadow:  5px 5px 20px  0px rgb(47, 47, 48);
+    /* background: rgba(255,250,250, 0.1); */
+        background: linear-gradient(to right,rgb(33, 36, 85), #492161);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+form{
+display: grid;
+    grid-template-columns: 1fr 150px;
+    grid-template-rows: 50px 1fr 50px;
+    gap: 10px;
+    /* padding: 5px; */
+}
+
+form > *{
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #333a45;
+    background: #414141;
+    color: white;
+}
+
+input::placeholder{
+    color: rgb(161, 180, 196);
+    white-space: pre-line;
+}
+
+.city{
+    height: 50px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    /* color: white; */
+}
+
+.pic{
+    display: none;
+}
+
+.svg{
+    padding:5px ;
+    height: 50px;
+    width: 150px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    color: rgb(161, 180, 196) ;
+    
+}
+
+svg{
+    width: 100%;
+    height: 100%;
+}
+
+.disc{
+    height: 150px; 
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    padding: 5px;
+    /* color: white; */
+}
+
+.submit{
+    color: rgb(161, 180, 196);
+   grid-column: 1/3;
+   grid-row: 3/3;
+}
+
+@media (max-width: 768px){
+    .hide{
+        display: none;
+    }
+    .logo{
+    margin-left: 10px ;
+}
+.nav-ele >ul{
+    margin-right: 10px;
+}
+body{
+    background-image: none;
+}
+.upl-box{
+    background-color: #28292b;
+}
+}

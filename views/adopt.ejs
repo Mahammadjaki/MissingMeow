@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/adopt.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="logo"> <a href="/home"><img src="/images/logos/logo-transparent.png" alt="Logo"></a> </div>
+        <div class="nav-ele">
+            <ul>
+                <li class="hide "><a href="/home">Home</a></li>
+                <li class="hide "><a href="/post">Post</a></li>
+                <li class="hide "><a href="/adopt">Adopt</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="cont">
+        <div class="child1"><h1>Find Your New Feline Friend.</h1></div>
+        <div class="child2">
+        <% users.forEach(function(user) { %>
+        <% user.posts.forEach(function(post) { %>
+    <div class="post-cards">
+      <div class="img"><img src="/images/uploads/<%= post.image %>" alt="img"></div>
+      <div class="plc-time">
+        <h2><%= post.city %></h2>
+        <p>12/12/2023</p>
+      </div>
+      <div class="disc">
+          <p><%= post.discription %></p>
+      </div>
+    </div>
+  <% }) %>
+<% }) %>
+        </div>
+    </div>
+</body>
+</html>

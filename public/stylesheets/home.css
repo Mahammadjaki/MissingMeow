@@ -1,0 +1,202 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barrio&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/images/logos/Copilot_20250625_180243.png');
+    font-family: 'Arial', sans-serif;
+       background-color: #000000;
+    color: #000000;
+    background-size: cover; /* Makes sure the image covers the entire background */
+    background-position: center; /* Keeps it centered */
+    background-repeat: no-repeat; /* Prevents it from repeating */
+     background-position: 40% 85%; /* 40% from the left, 90% from the top */
+    margin: 0;
+    height: 100vh;
+}
+
+.nav{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 55px;
+    background: rgba(-135deg, 2, 2, 2, 0.2);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid #911fd3;
+}
+
+.logo{
+    margin-left: 100px ;
+}
+.logo img{
+    width: 100px;
+    height: auto;
+    filter: brightness(0) invert(100%);
+}
+.nav-ele >ul{
+    margin-right: 100px;
+    border-radius: 5px;
+    color: aliceblue;
+    /* margin-right: 100px; */
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    justify-content: center; 
+    list-style-type: none;
+
+}
+
+.nav-ele >ul>li{
+    margin-left: 20px;
+    padding:6px;
+    border-radius: 5px;
+    }
+    
+ a {
+        text-decoration: none;
+        color: inherit;
+}
+
+.main-body{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    height:calc(100vh - 55px);
+    /* Move content slightly above center */
+    align-items: center;
+    width: 100%;
+    /* border: 2px solid rgb(255, 255, 255); */
+}
+
+.title-box{
+/* border-bottom: 2px solid #f0f8ff; */
+backdrop-filter: blur(1px);
+margin-top: 20vh;
+width: 70%;
+padding-bottom: 30px;
+}
+
+.cus-devider{
+    height: 1px;
+    width: 75%;
+    background: linear-gradient(to right,transparent, #911fd3, transparent);
+}
+
+.title-box h1{
+    color: #cccccc;
+    font-size: 5.5rem;
+    text-align: center;
+    font-family: 'lora';
+}
+
+.title-box span{
+    color: #911fd3;
+}
+
+.title-box p{
+    word-break: break-word;
+    max-width: 70vw;
+    text-align: center;
+    color: rgba(158, 162, 167, 0.719);
+    line-height: 25px;
+}
+
+.route-box{
+    margin: 50px;
+    /* border: 2px solid blue; */
+display: flex;
+justify-content: center;
+gap: 20px; 
+align-items: center;
+width: min(90vw, 35vw);
+/* height: 390px; */
+/* backdrop-filter: blur(18px); */
+/* background: rgba(0, 128, 255,0.2); */
+}
+
+.left-box{
+    width: 40%;
+    height: 95%;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    gap: 50px;
+    align-items: start;
+    /* border: 2px solid red; */
+    margin: 15px;
+}
+
+.left-box h2{
+    display: flex;
+    align-items: center;
+    justify-content: center; /* background-color: antiquewhite; */
+    color: aliceblue;
+    backdrop-filter: blur(1px);
+   border: 1px solid aliceblue;
+    background: rgba( 250, 235, 215, 0.1);
+    border-radius:10px;
+    padding: 5px;
+    height: 35px;
+    text-align: center;
+    width: 240px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.right-box{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    margin: 15px;
+}
+
+.right-box img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+    object-position: center;
+}
+
+@media (max-width: 768px){
+    .hide{
+        display: none;
+    }
+    .logo{
+    margin-left: 10px ;
+}
+.nav-ele >ul{
+    margin-right: 10px;
+}
+body{
+    background-image: none;
+}
+    .main-body{
+        height: auto;
+    }
+    .title-box{
+        margin-top: 10px;
+        width: 90%;
+    }
+    .title-box h1{
+        font-size: 3rem;
+    }
+    .title-box p{
+        max-width: 90vw;
+        font-size: 1.2rem;
+    }
+    .route-box{
+        margin: 20px;
+    }
+}

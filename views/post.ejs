@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/post.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo"> <a href="/home"><img src="/images/logos/logo-transparent.png" alt="Logo"></a> </div>
+        <div class="nav-ele">
+            <ul>
+                <li class="hide"><a href="/home">Home</a></li>
+                <li class="hide"><a href="/post">Post</a></li>
+                <li class="hide"><a href="/adopt">Adopt</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Post a Missing or Found Pet</h1>
+        <div class="cus-devider"></div>
+        <div class="upl-box">
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input class="city" type="text" name="city" placeholder="city name" required />
+                <label for="pic" class="svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M8 1V5H4V19H20V3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934C2 3.44476 2.45531 3 2.9918 3H6V1H8ZM12 8L16 12H13V16H11V12H8L12 8ZM18 1V5H10V3H16V1H18Z">
+                        </path>
+                    </svg>
+                    <p>Upload a photo</p>
+                </label>
+                <input class="pic" id="pic" type="file" name="file" required />
+                <input class="disc" type="text" name="disc"
+                    placeholder="Describe your missing or found pet (e.g., color, breed, last seen location)"
+                    required />
+                <input class="submit" type="submit" value="submit" />
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
