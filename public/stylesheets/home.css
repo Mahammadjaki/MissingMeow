@@ -149,7 +149,10 @@ width: min(90vw, 35vw);
     font-size: 1.5rem;
     text-align: center;
 }
-
+.left-box h2:hover{
+    background: rgba( 250, 235, 215, 0.5);
+    backdrop-filter: blur(10px);
+}
 .right-box{
     width: 60%;
     height: 100%;

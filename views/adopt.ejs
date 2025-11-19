@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/adopt.css">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
 </head>
 <body>
     <div class="nav">
@@ -27,7 +29,7 @@
       <div class="img"><img src="/images/uploads/<%= post.image %>" alt="img"></div>
       <div class="plc-time">
         <h2><%= post.city %></h2>
-        <p>12/12/2023</p>
+        <p class="post-date" data-date="<%= post.PostedAt %>"></p>
       </div>
       <div class="disc">
           <p><%= post.discription %></p>
@@ -37,5 +39,15 @@
 <% }) %>
         </div>
     </div>
+    <script>
+  console.log("dayjs running")
+  dayjs.extend(window.dayjs_plugin_relativeTime);
+  document.querySelectorAll('.post-date').forEach(function(el) {
+    const date = el.getAttribute('data-date');
+    if (date) {
+      el.textContent = dayjs(date).fromNow();
+    }
+  });
+</script>
 </body>
 </html>

@@ -51,9 +51,9 @@ router.post('/upload', isLoggedIn,upload.single('file'),async (req,res)=>{
   const user =  await userModel.findOne({username: req.session.passport.user }); // Find the user by username
   const post = await postModel.create({
       city:req.body.city,
-        discription:req.body.disc,
-        image:req.file.filename, // Use the filename from the uploaded file
-        user: user._id
+      discription:req.body.disc,
+      image:req.file.filename, // Use the filename from the uploaded file
+      user: user._id
   });
 
   user.posts.push(post._id); // Add the post ID to the user's posts array
@@ -90,8 +90,12 @@ router.get('/adopt',isLoggedIn,async function(req,res){
   res.render('adopt',{users: users});
 });
 
+// router.get('/about',function(req,res){
+//   res.render('about');
+// });
+
 router.get('/about',function(req,res){
-  res.render('about');
-});
+  res.render('map');
+})
 
 module.exports = router;

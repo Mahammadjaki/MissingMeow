@@ -11,6 +11,32 @@ var usersRouter = require('./routes/users');
 const passport = require('passport');
 var app = express();
 
+// for deploying to render
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.error(err));
+
+//converting to http server
+const http = require('http');
+const server = http.createServer(app);
+
+const socket = require('socket.io');
+const io = socket(server);
+
+
+io.on("connect", function(socket){
+  socket.on("send-location",function(data){
+    io.emit("receive-location",{id:socket.id, ...data})
+  });
+  console.log("A user connected");
+});
+//app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, "public"))); 
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -53,4 +79,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+const PORT = process.env.PORT || 3001;
+server.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+
 module.exports = app;
+
