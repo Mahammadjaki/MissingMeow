@@ -6,7 +6,21 @@
 
 var app = require('../app');
 var debug = require('debug')('missingmeow:server');
-var http = require('http');
+
+//converting to http server
+const http = require('http');
+const server = http.createServer(app);
+
+const socket = require('socket.io');
+const io = socket(server);
+
+
+io.on("connect", function(socket){
+  socket.on("send-location",function(data){
+    io.emit("receive-location",{id:socket.id, ...data})
+  });
+  console.log("A user connected");
+});
 
 /**
  * Get port from environment and store in Express.
@@ -19,7 +33,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+
 
 /**
  * Listen on provided port, on all network interfaces.

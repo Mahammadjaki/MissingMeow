@@ -22,20 +22,7 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log("MongoDB connected"))
 .catch(err => console.error("MongoDB connection error:", err));
 
-//converting to http server
-const http = require('http');
-const server = http.createServer(app);
 
-const socket = require('socket.io');
-const io = socket(server);
-
-
-io.on("connect", function(socket){
-  socket.on("send-location",function(data){
-    io.emit("receive-location",{id:socket.id, ...data})
-  });
-  console.log("A user connected");
-});
 //app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, "public"))); 
 
